@@ -122,7 +122,8 @@ const CONFIG = {
   function wireContact() {
     const waBase = (CONFIG.WHATSAPP_URL || "").trim();
     const waMsg = encodeURIComponent(
-      "Hi Yuli — I'd like to chat about AllSorted HQ helping my business."
+      (window.AllSortedI18n && AllSortedI18n.t("wa.prefill")) ||
+        "Hi Yuli — I'd like to chat about AllSorted HQ helping my business."
     );
     const waLink = waBase
       ? `${waBase}${waBase.includes("?") ? "&" : "?"}text=${waMsg}`
@@ -210,31 +211,43 @@ const CONFIG = {
     return roundFriendly(raw);
   }
 
+  function uiLocale() {
+    return (window.AllSortedI18n && AllSortedI18n.uiLocale) || "en-ZA";
+  }
+
+  function i18n(key, vars) {
+    return (window.AllSortedI18n && AllSortedI18n.t(key, vars)) || key;
+  }
+
   function formatPrice(amount, currency) {
     const meta = CONFIG.currencies[currency] || CONFIG.currencies.USD;
+    const loc = uiLocale();
     // MXN: force MX$ so it is not confused with USD
     if (currency === "MXN") {
-      return `MX$${amount.toLocaleString("en-US")}`;
+      return `MX$${amount.toLocaleString(loc)}`;
     }
     if (currency === "ZAR") {
-      return `R${amount.toLocaleString("en-ZA")}`;
+      return `R${amount.toLocaleString(loc)}`;
     }
     try {
-      return new Intl.NumberFormat(meta.locale, {
+      return new Intl.NumberFormat(loc, {
         style: "currency",
         currency: meta.code,
         maximumFractionDigits: 0,
       }).format(amount);
     } catch (_) {
-      return `${meta.symbol}${amount.toLocaleString("en-US")}`;
+      return `${meta.symbol}${amount.toLocaleString(loc)}`;
     }
   }
 
-  function periodLabel(period, currency) {
-    if (period === "month") {
-      return currency === "ZAR" ? "/ month" : "/ mo";
+  function periodLabel(period, currency, pkgKey) {
+    if (pkgKey === "ads" || (period === "month" && CONFIG.packages[pkgKey]?.suffix)) {
+      // ads has custom suffix handled separately
     }
-    return currency === "ZAR" ? "once-off" : "once";
+    if (period === "month") {
+      return i18n(currency === "ZAR" ? "packages.month" : "packages.monthShort");
+    }
+    return i18n(currency === "ZAR" ? "packages.once" : "packages.onceShort");
   }
 
   function applyPrices() {
@@ -243,20 +256,18 @@ const CONFIG = {
       const key = el.getAttribute("data-price");
       const pkg = CONFIG.packages[key];
       if (!pkg) {
-        el.textContent = "Get a quote";
+        el.textContent = i18n("packages.quote");
         return;
       }
       const amount = priceFor(key, currency, tier);
-      const suffix = pkg.suffix ? ` ${pkg.suffix}` : "";
-      el.innerHTML = `from ${formatPrice(amount, currency)} <span>${periodLabel(
-        pkg.period,
-        currency
-      )}${suffix}</span>`;
+      let period = periodLabel(pkg.period, currency, key);
+      if (key === "ads") period = i18n("packages.monthAds");
+      el.innerHTML = `${i18n("packages.from")} ${formatPrice(amount, currency)} <span>${period}</span>`;
     });
 
     const note = document.getElementById("pricing-tier-note");
     if (note) {
-      note.textContent = `Prices shown in ${currency}. Final quote confirmed after a free chat.`;
+      note.textContent = i18n("packages.tierNote", { currency });
     }
 
     document.querySelectorAll("[data-currency-btn]").forEach((btn) => {
@@ -467,8 +478,7 @@ const CONFIG = {
           if (status) {
             status.hidden = false;
             status.className = "form-status is-error";
-            status.textContent =
-              "Form is not configured yet (missing FORM_ACCESS_KEY). Please use Chat on WhatsApp.";
+            status.textContent = i18n("contact.form.missingKey");
           }
           return;
         }
@@ -478,7 +488,7 @@ const CONFIG = {
           if (status) {
             status.hidden = false;
             status.className = "form-status is-success";
-            status.textContent = "Thanks — message sent.";
+            status.textContent = i18n("contact.form.honeypot");
           }
           form.reset();
           return;
@@ -486,7 +496,7 @@ const CONFIG = {
         if (status) {
           status.hidden = false;
           status.className = "form-status";
-          status.textContent = "Sending…";
+          status.textContent = i18n("contact.form.sending");
         }
         if (btn) btn.disabled = true;
         try {
@@ -501,8 +511,7 @@ const CONFIG = {
           if (res.ok && data.success !== false) {
             if (status) {
               status.className = "form-status is-success";
-              status.textContent =
-                "Thanks — your message is on its way. We’ll reply soon.";
+              status.textContent = i18n("contact.form.success");
             }
             form.reset();
             // re-inject key after reset
@@ -514,8 +523,7 @@ const CONFIG = {
         } catch (err) {
           if (status) {
             status.className = "form-status is-error";
-            status.textContent =
-              "Sorry — something went wrong. Please try Chat on WhatsApp instead.";
+            status.textContent = i18n("contact.form.error");
           }
         } finally {
           if (btn) btn.disabled = false;
@@ -539,10 +547,25 @@ const CONFIG = {
     });
   }
 
+  function refreshFooterYear() {
+    const yearEl = document.getElementById("year");
+    if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+  }
+
+  if (window.AllSortedI18n) {
+    AllSortedI18n.init();
+    document.addEventListener("allsorted:lang", () => {
+      wireContact();
+      applyPrices();
+      refreshFooterYear();
+    });
+  }
+
   wireContact();
   wireChrome();
   wireCurrencySwitcher();
   // Start at final fallback (USD / Tier A), then refine via geo → language
   setPricing(CONFIG.defaultCurrency, CONFIG.defaultTier, "fallback");
   detectRegion();
+  refreshFooterYear();
 })();

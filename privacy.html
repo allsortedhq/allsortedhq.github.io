@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-ZA">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -12,16 +12,36 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo" href="index.html"><img src="assets/logo.svg" width="160" height="36" alt="AllSorted HQ" /></a>
+      <div class="header-tools">
+        <div class="lang-switch lang-switch--header" role="group" data-i18n-aria="lang.label" aria-label="Language">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+          <button type="button" data-lang="es" aria-pressed="false">ES</button>
+        </div>
+      </div>
     </div>
   </header>
   <main class="section">
     <div class="container" style="max-width:720px">
-      <p class="eyebrow">Privacy-minded</p>
-      <h1>Privacy note</h1>
-      <p class="lead">AllSorted HQ only collects the contact details you choose to send through the website form or WhatsApp. We use them to reply about your enquiry. We do not sell your data.</p>
-      <p class="muted">Form messages are delivered via Web3Forms to our inbox. This short note will be expanded into a full privacy policy as the business grows. Questions? Use the contact form on the home page.</p>
-      <p style="margin-top:2rem"><a class="btn btn-primary" href="index.html">← Back to home</a></p>
+      <p class="eyebrow" data-i18n="privacy.eyebrow">Privacy-minded</p>
+      <h1 data-i18n="privacy.title">Privacy note</h1>
+      <p class="lead" data-i18n="privacy.lead">AllSorted HQ only collects the contact details you choose to send through the website form or WhatsApp. We use them to reply about your enquiry. We do not sell your data.</p>
+      <p class="muted" data-i18n="privacy.body">Form messages are delivered via Web3Forms to our inbox. This short note will be expanded into a full privacy policy as the business grows. Questions? Use the contact form on the home page.</p>
+      <p style="margin-top:2rem"><a class="btn btn-primary" href="index.html" data-i18n="privacy.back">← Back to home</a></p>
     </div>
   </main>
+  <script src="js/i18n.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.AllSortedI18n) {
+        AllSortedI18n.init();
+        // privacy uses meta title key
+        document.title = AllSortedI18n.t("privacy.metaTitle");
+        document.addEventListener("allsorted:lang", function () {
+          document.title = AllSortedI18n.t("privacy.metaTitle");
+        });
+      }
+    });
+  </script>
 </body>
 </html>

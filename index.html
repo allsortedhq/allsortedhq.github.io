@@ -7,6 +7,10 @@
   <meta name="description" content="AllSorted HQ is your friendly remote-first tech, business and AI partner for small businesses worldwide. Websites, Google Maps, WhatsApp, marketing and practical AI — one team for everything tech." />
   <meta name="theme-color" content="#0B1F33" />
   <link rel="canonical" href="https://allsortedhq.github.io/" />
+  <link rel="alternate" hreflang="en" href="https://allsortedhq.github.io/?lang=en" />
+  <link rel="alternate" hreflang="ru" href="https://allsortedhq.github.io/?lang=ru" />
+  <link rel="alternate" hreflang="es" href="https://allsortedhq.github.io/?lang=es" />
+  <link rel="alternate" hreflang="x-default" href="https://allsortedhq.github.io/" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 
   <!-- Open Graph -->
@@ -49,25 +53,39 @@
   </script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
 
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo" href="#top" aria-label="AllSorted HQ home">
         <img src="assets/logo.svg" width="180" height="40" alt="AllSorted HQ" />
       </a>
-      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
-        <span></span><span></span><span></span>
-      </button>
-      <nav id="site-nav" aria-label="Primary">
+      <nav id="site-nav" data-i18n-aria="nav.primary" aria-label="Primary">
         <ul class="nav-links">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#packages">Packages</a></li>
-          <li><a href="#how">How it works</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li class="nav-cta"><a class="btn btn-primary" data-cta="whatsapp" href="#contact">Chat on WhatsApp</a></li>
+          <li><a href="#services" data-i18n="nav.services">Services</a></li>
+          <li><a href="#packages" data-i18n="nav.packages">Packages</a></li>
+          <li><a href="#how" data-i18n="nav.how">How it works</a></li>
+          <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+          <li class="nav-cta"><a class="btn btn-primary" data-cta="whatsapp" href="#contact" data-i18n="nav.whatsapp">Chat on WhatsApp</a></li>
+          <li class="nav-lang-mobile">
+            <div class="lang-switch" role="group" data-i18n-aria="lang.label" aria-label="Language">
+              <button type="button" data-lang="en" aria-pressed="true">EN</button>
+              <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+              <button type="button" data-lang="es" aria-pressed="false">ES</button>
+            </div>
+          </li>
         </ul>
       </nav>
+      <div class="header-tools">
+        <div class="lang-switch lang-switch--header" role="group" data-i18n-aria="lang.label" aria-label="Language">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+          <button type="button" data-lang="es" aria-pressed="false">ES</button>
+        </div>
+        <button class="nav-toggle" type="button" data-i18n-aria="nav.open" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -78,41 +96,40 @@
       <div class="blob blob-2" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div>
-          <div class="hero-badge">Remote-first · working worldwide</div>
-          <h1>Tech, business &amp; AI — <span>all sorted.</span></h1>
-          <p class="lead">
+          <div class="hero-badge" data-i18n="hero.badge">Remote-first · working worldwide</div>
+          <h1 data-i18n-html="hero.title">Tech, business &amp; AI — <span>all sorted.</span></h1>
+          <p class="lead" data-i18n="hero.lead">
             AllSorted HQ is the friendly all-round tech partner for small businesses.
             One team for websites, Google Maps, WhatsApp, marketing and practical AI —
             so you spend less time on tech headaches and more time on customers.
           </p>
           <div class="btn-row" style="margin-top:1.5rem">
-            <a class="btn btn-primary" data-cta="whatsapp" href="#contact">Chat on WhatsApp</a>
-            <a class="btn btn-ghost" data-cta="book" href="#contact">Book a free 15-min call</a>
+            <a class="btn btn-primary" data-cta="whatsapp" href="#contact" data-i18n="nav.whatsapp">Chat on WhatsApp</a>
+            <a class="btn btn-ghost" data-cta="book" href="#contact" data-i18n="hero.book">Book a free 15-min call</a>
           </div>
-          <p class="lang-note" role="note">We also work in <strong>Русский</strong> and <strong>Español</strong></p>
-          <p class="hero-note">Small and medium businesses worldwide — English, Русский and Español.</p>
+          <p class="hero-note" data-i18n="hero.note">Small and medium businesses worldwide.</p>
         </div>
-        <aside class="hero-card" aria-label="What we cover">
+        <aside class="hero-card" data-i18n-aria="hero.cardLabel" aria-label="What we cover">
           <div class="hero-card-inner">
-            <h2>One partner for everything tech</h2>
+            <h2 data-i18n="hero.cardTitle">One partner for everything tech</h2>
             <ul class="pillar-list">
               <li>
                 <span class="pillar-icon" aria-hidden="true">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8"/></svg>
                 </span>
-                <div><strong>Tech support</strong><span>Websites, Google listing, tools that actually work</span></div>
+                <div><strong data-i18n="hero.pillar1.title">Tech support</strong><span data-i18n="hero.pillar1.desc">Websites, Google listing, tools that actually work</span></div>
               </li>
               <li>
                 <span class="pillar-icon" aria-hidden="true">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
                 </span>
-                <div><strong>Business support</strong><span>WhatsApp, forms, light ops that save hours</span></div>
+                <div><strong data-i18n="hero.pillar2.title">Business support</strong><span data-i18n="hero.pillar2.desc">WhatsApp, forms, light ops that save hours</span></div>
               </li>
               <li>
                 <span class="pillar-icon" aria-hidden="true">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a7 7 0 0 1 7 7c0 3.5-2.5 6-5 8l-2 2-2-2c-2.5-2-5-4.5-5-8a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.2"/></svg>
                 </span>
-                <div><strong>AI partner</strong><span>One process at a time — automations &amp; assistants</span></div>
+                <div><strong data-i18n="hero.pillar3.title">AI partner</strong><span data-i18n="hero.pillar3.desc">One process at a time — automations &amp; assistants</span></div>
               </li>
             </ul>
           </div>
@@ -123,39 +140,39 @@
     <!-- PROBLEMS -->
     <section class="section problems" id="problems" aria-labelledby="problems-title">
       <div class="container">
-        <p class="eyebrow">Sound familiar?</p>
-        <h2 id="problems-title" class="reveal">Problems we sort out</h2>
-        <p class="lead reveal">Most small businesses don’t need a big agency. They need a clear listing, a site that works on a phone, WhatsApp that answers, and less copy-paste every week.</p>
+        <p class="eyebrow" data-i18n="problems.eyebrow">Sound familiar?</p>
+        <h2 id="problems-title" class="reveal" data-i18n="problems.title">Problems we sort out</h2>
+        <p class="lead reveal" data-i18n="problems.lead">Most small businesses don’t need a big agency. They need a clear listing, a site that works on a phone, WhatsApp that answers, and less copy-paste every week.</p>
         <div class="problem-grid">
           <article class="problem-card reveal">
             <div class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-            <h3>Hard to find on Google</h3>
-            <p>Wrong hours, few photos, no website link — neighbours show up first on Maps.</p>
+            <h3 data-i18n="problems.1.title">Hard to find on Google</h3>
+            <p data-i18n="problems.1.desc">Wrong hours, few photos, no website link — neighbours show up first on Maps.</p>
           </article>
           <article class="problem-card reveal">
             <div class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 10h8M8 14h5"/></svg></div>
-            <h3>Website stuck or outdated</h3>
-            <p>Broken forms, desktop-only layout, or no site at all — and nobody to fix it quickly.</p>
+            <h3 data-i18n="problems.2.title">Website stuck or outdated</h3>
+            <p data-i18n="problems.2.desc">Broken forms, desktop-only layout, or no site at all — and nobody to fix it quickly.</p>
           </article>
           <article class="problem-card reveal">
             <div class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-            <h3>WhatsApp chaos</h3>
-            <p>Missed messages after hours, repeating the same answers, no catalogue or booking flow.</p>
+            <h3 data-i18n="problems.3.title">WhatsApp chaos</h3>
+            <p data-i18n="problems.3.desc">Missed messages after hours, repeating the same answers, no catalogue or booking flow.</p>
           </article>
           <article class="problem-card reveal">
             <div class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5M4 19h16M8 17V9m4 8V7m4 10v-4"/></svg></div>
-            <h3>Marketing feels scattered</h3>
-            <p>Instagram half-set-up, ads confusing, no clear next step that fits a small budget.</p>
+            <h3 data-i18n="problems.4.title">Marketing feels scattered</h3>
+            <p data-i18n="problems.4.desc">Instagram half-set-up, ads confusing, no clear next step that fits a small budget.</p>
           </article>
           <article class="problem-card reveal">
             <div class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="3.5"/></svg></div>
-            <h3>“AI” sounds overwhelming</h3>
-            <p>You don’t need a transformation project — you need one painful process made easier.</p>
+            <h3 data-i18n="problems.5.title">“AI” sounds overwhelming</h3>
+            <p data-i18n="problems.5.desc">You don’t need a transformation project — you need one painful process made easier.</p>
           </article>
           <article class="problem-card reveal">
             <div class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-            <h3>Too many vendors</h3>
-            <p>One person for the site, another for ads, another for tools — and you still hold it together.</p>
+            <h3 data-i18n="problems.6.title">Too many vendors</h3>
+            <p data-i18n="problems.6.desc">One person for the site, another for ads, another for tools — and you still hold it together.</p>
           </article>
         </div>
       </div>
@@ -164,49 +181,49 @@
     <!-- SERVICES -->
     <section class="section" id="services" aria-labelledby="services-title">
       <div class="container">
-        <p class="eyebrow">What we do</p>
-        <h2 id="services-title" class="reveal">Services, in plain language</h2>
-        <p class="lead reveal">Pick one starting point — or ask us what would help most. We keep scope clear and delivery practical.</p>
+        <p class="eyebrow" data-i18n="services.eyebrow">What we do</p>
+        <h2 id="services-title" class="reveal" data-i18n="services.title">Services, in plain language</h2>
+        <p class="lead reveal" data-i18n="services.lead">Pick one starting point — or ask us what would help most. We keep scope clear and delivery practical.</p>
         <div class="services-grid">
           <article class="service-card reveal">
             <div class="icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10l9-7 9 7v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
-            <h3>Website creation</h3>
-            <p>Clear, mobile-first sites that make it easy to call, WhatsApp or book.</p>
+            <h3 data-i18n="services.1.title">Website creation</h3>
+            <p data-i18n="services.1.desc">Clear, mobile-first sites that make it easy to call, WhatsApp or book.</p>
           </article>
           <article class="service-card reveal">
             <div class="icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
-            <h3>Website care</h3>
-            <p>Ongoing updates, small changes, backups and “please just fix this” help.</p>
+            <h3 data-i18n="services.2.title">Website care</h3>
+            <p data-i18n="services.2.desc">Ongoing updates, small changes, backups and “please just fix this” help.</p>
           </article>
           <article class="service-card reveal">
             <div class="icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-            <h3>Google Business Profile</h3>
-            <p>Setup and optimisation so customers can find you on Google Maps &amp; Search.</p>
+            <h3 data-i18n="services.3.title">Google Business Profile</h3>
+            <p data-i18n="services.3.desc">Setup and optimisation so customers can find you on Google Maps &amp; Search.</p>
           </article>
           <article class="service-card reveal">
             <div class="icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
-            <h3>Google marketing</h3>
-            <p>Local SEO tweaks and Google Ads set up gently — ad spend stays yours.</p>
+            <h3 data-i18n="services.4.title">Google marketing</h3>
+            <p data-i18n="services.4.desc">Local SEO tweaks and Google Ads set up gently — ad spend stays yours.</p>
           </article>
           <article class="service-card reveal">
             <div class="icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M8 12h8M12 8v8"/></svg></div>
-            <h3>Social media</h3>
-            <p>Profile setup and light marketing so Instagram &amp; Facebook look trustworthy.</p>
+            <h3 data-i18n="services.5.title">Social media</h3>
+            <p data-i18n="services.5.desc">Profile setup and light marketing so Instagram &amp; Facebook look trustworthy.</p>
           </article>
           <article class="service-card reveal">
             <div class="icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/></svg></div>
-            <h3>WhatsApp Business</h3>
-            <p>Auto-replies, catalogues, bookings — plus consulting on what to automate next.</p>
+            <h3 data-i18n="services.6.title">WhatsApp Business</h3>
+            <p data-i18n="services.6.desc">Auto-replies, catalogues, bookings — plus consulting on what to automate next.</p>
           </article>
           <article class="service-card reveal">
             <div class="icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></div>
-            <h3>AI for your processes</h3>
-            <p>Automations and simple AI assistants that save staff time — one process at a time.</p>
+            <h3 data-i18n="services.7.title">AI for your processes</h3>
+            <p data-i18n="services.7.desc">Automations and simple AI assistants that save staff time — one process at a time.</p>
           </article>
           <article class="service-card reveal">
             <div class="icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
-            <h3>General tech support</h3>
-            <p>Email logins, broken forms, tool setup — practical help when something’s stuck.</p>
+            <h3 data-i18n="services.8.title">General tech support</h3>
+            <p data-i18n="services.8.desc">Email logins, broken forms, tool setup — practical help when something’s stuck.</p>
           </article>
         </div>
       </div>
@@ -215,12 +232,12 @@
     <!-- PACKAGES -->
     <section class="section packages" id="packages" aria-labelledby="packages-title">
       <div class="container">
-        <p class="eyebrow">Clear starting offers</p>
-        <h2 id="packages-title" class="reveal">Packages</h2>
-        <p class="lead reveal">Clear starting “from” prices in your currency — pick another anytime. Final quotes depend on scope.</p>
+        <p class="eyebrow" data-i18n="packages.eyebrow">Clear starting offers</p>
+        <h2 id="packages-title" class="reveal" data-i18n="packages.title">Packages</h2>
+        <p class="lead reveal" data-i18n="packages.lead">Clear starting “from” prices in your currency — pick another anytime. Final quotes depend on scope.</p>
 
-        <div class="currency-switcher" role="group" aria-label="Display currency">
-          <span class="currency-label">Currency</span>
+        <div class="currency-switcher" role="group" data-i18n-aria="packages.currencyLabel" aria-label="Display currency">
+          <span class="currency-label" data-i18n="packages.currency">Currency</span>
           <button type="button" class="currency-btn" data-currency-btn="ZAR" aria-pressed="false">ZAR</button>
           <button type="button" class="currency-btn" data-currency-btn="USD" aria-pressed="false">USD</button>
           <button type="button" class="currency-btn" data-currency-btn="EUR" aria-pressed="false">EUR</button>
@@ -230,76 +247,76 @@
         </div>
         <p id="pricing-tier-note" class="pricing-tier-note" aria-live="polite"></p>
 
-        <div class="pkg-tabs" role="tablist" aria-label="Package type">
-          <button type="button" role="tab" class="is-active" data-pkg-tab="once" aria-selected="true">Once-off</button>
-          <button type="button" role="tab" data-pkg-tab="monthly" aria-selected="false">Monthly care</button>
+        <div class="pkg-tabs" role="tablist" data-i18n-aria="packages.tabsLabel" aria-label="Package type">
+          <button type="button" role="tab" class="is-active" data-pkg-tab="once" aria-selected="true" data-i18n="packages.tabOnce">Once-off</button>
+          <button type="button" role="tab" data-pkg-tab="monthly" aria-selected="false" data-i18n="packages.tabMonthly">Monthly care</button>
         </div>
 
         <div data-pkg-panel="once">
           <div class="pkg-grid">
             <article class="pkg-card featured reveal">
-              <span class="pkg-tag">Foot-in-the-door</span>
-              <h3>Google Maps Fix</h3>
+              <span class="pkg-tag" data-i18n="pkg.maps.tag">Foot-in-the-door</span>
+              <h3 data-i18n="pkg.maps.title">Google Maps Fix</h3>
               <p class="pkg-price" data-price="maps">from R1,200 <span>once-off</span></p>
               <ul>
-                <li>Set up or clean up Google Business Profile</li>
-                <li>Categories, hours, services, photos</li>
-                <li>Review link &amp; first Google Post</li>
-                <li>You stay the owner</li>
+                <li data-i18n="pkg.maps.1">Set up or clean up Google Business Profile</li>
+                <li data-i18n="pkg.maps.2">Categories, hours, services, photos</li>
+                <li data-i18n="pkg.maps.3">Review link &amp; first Google Post</li>
+                <li data-i18n="pkg.maps.4">You stay the owner</li>
               </ul>
-              <a class="btn btn-coral" data-cta="whatsapp" href="#contact">Start with Maps Fix</a>
+              <a class="btn btn-coral" data-cta="whatsapp" href="#contact" data-i18n="pkg.maps.cta">Start with Maps Fix</a>
             </article>
             <article class="pkg-card reveal">
-              <h3>Starter</h3>
+              <h3 data-i18n="pkg.starter.title">Starter</h3>
               <p class="pkg-price" data-price="starter">from R5,500 <span>once-off</span></p>
               <ul>
-                <li>Maps Fix included</li>
-                <li>Simple 1-page website</li>
-                <li>WhatsApp button</li>
-                <li>Basic visitor tracking</li>
+                <li data-i18n="pkg.starter.1">Maps Fix included</li>
+                <li data-i18n="pkg.starter.2">Simple 1-page website</li>
+                <li data-i18n="pkg.starter.3">WhatsApp button</li>
+                <li data-i18n="pkg.starter.4">Basic visitor tracking</li>
               </ul>
-              <a class="btn btn-light" data-cta="whatsapp" href="#contact">Ask about Starter</a>
+              <a class="btn btn-light" data-cta="whatsapp" href="#contact" data-i18n="pkg.starter.cta">Ask about Starter</a>
             </article>
             <article class="pkg-card reveal">
-              <h3>Growth</h3>
+              <h3 data-i18n="pkg.growth.title">Growth</h3>
               <p class="pkg-price" data-price="growth">from R11,000 <span>once-off</span></p>
               <ul>
-                <li>5–8 page website + Maps Fix</li>
-                <li>Instagram / Facebook setup</li>
-                <li>WhatsApp Business greeting &amp; quick replies</li>
-                <li>Catalogue where useful</li>
+                <li data-i18n="pkg.growth.1">5–8 page website + Maps Fix</li>
+                <li data-i18n="pkg.growth.2">Instagram / Facebook setup</li>
+                <li data-i18n="pkg.growth.3">WhatsApp Business greeting &amp; quick replies</li>
+                <li data-i18n="pkg.growth.4">Catalogue where useful</li>
               </ul>
-              <a class="btn btn-light" data-cta="whatsapp" href="#contact">Ask about Growth</a>
+              <a class="btn btn-light" data-cta="whatsapp" href="#contact" data-i18n="pkg.growth.cta">Ask about Growth</a>
             </article>
             <article class="pkg-card reveal">
-              <h3>Automation sprint</h3>
+              <h3 data-i18n="pkg.auto.title">Automation sprint</h3>
               <p class="pkg-price" data-price="automation">from R6,500 <span>once-off</span></p>
               <ul>
-                <li>1–3 simple automations</li>
-                <li>e.g. form → WhatsApp notify</li>
-                <li>Short how-to for your team</li>
+                <li data-i18n="pkg.auto.1">1–3 simple automations</li>
+                <li data-i18n="pkg.auto.2">e.g. form → WhatsApp notify</li>
+                <li data-i18n="pkg.auto.3">Short how-to for your team</li>
               </ul>
-              <a class="btn btn-light" data-cta="whatsapp" href="#contact">Get a quote</a>
+              <a class="btn btn-light" data-cta="whatsapp" href="#contact" data-i18n="packages.quote">Get a quote</a>
             </article>
             <article class="pkg-card reveal">
-              <h3>AI Process Lite</h3>
+              <h3 data-i18n="pkg.ai.title">AI Process Lite</h3>
               <p class="pkg-price" data-price="ai">from R7,500 <span>once-off</span></p>
               <ul>
-                <li>Map one painful process</li>
-                <li>Simple AI + automation</li>
-                <li>Training so it sticks</li>
+                <li data-i18n="pkg.ai.1">Map one painful process</li>
+                <li data-i18n="pkg.ai.2">Simple AI + automation</li>
+                <li data-i18n="pkg.ai.3">Training so it sticks</li>
               </ul>
-              <a class="btn btn-light" data-cta="whatsapp" href="#contact">Get a quote</a>
+              <a class="btn btn-light" data-cta="whatsapp" href="#contact" data-i18n="packages.quote">Get a quote</a>
             </article>
             <article class="pkg-card reveal">
-              <h3>Something else?</h3>
-              <p class="pkg-price">Get a quote</p>
+              <h3 data-i18n="pkg.else.title">Something else?</h3>
+              <p class="pkg-price" data-i18n="packages.quote">Get a quote</p>
               <ul>
-                <li>Mix of services tailored to you</li>
-                <li>Clear written scope</li>
-                <li>50% deposit before we start</li>
+                <li data-i18n="pkg.else.1">Mix of services tailored to you</li>
+                <li data-i18n="pkg.else.2">Clear written scope</li>
+                <li data-i18n="pkg.else.3">50% deposit before we start</li>
               </ul>
-              <a class="btn btn-light" data-cta="book" href="#contact">Book a free 15-min call</a>
+              <a class="btn btn-light" data-cta="book" href="#contact" data-i18n="hero.book">Book a free 15-min call</a>
             </article>
           </div>
         </div>
@@ -307,93 +324,93 @@
         <div data-pkg-panel="monthly" hidden>
           <div class="pkg-grid">
             <article class="pkg-card featured reveal">
-              <span class="pkg-tag">Most popular start</span>
-              <h3>Site &amp; Tech Care</h3>
+              <span class="pkg-tag" data-i18n="pkg.care.tag">Most popular start</span>
+              <h3 data-i18n="pkg.care.title">Site &amp; Tech Care</h3>
               <p class="pkg-price" data-price="care">from R900 <span>/ month</span></p>
               <ul>
-                <li>Site updates &amp; backups</li>
-                <li>~60 min small changes</li>
-                <li>Light tool help when things break</li>
+                <li data-i18n="pkg.care.1">Site updates &amp; backups</li>
+                <li data-i18n="pkg.care.2">~60 min small changes</li>
+                <li data-i18n="pkg.care.3">Light tool help when things break</li>
               </ul>
-              <a class="btn btn-coral" data-cta="whatsapp" href="#contact">Ask about Care</a>
+              <a class="btn btn-coral" data-cta="whatsapp" href="#contact" data-i18n="pkg.care.cta">Ask about Care</a>
             </article>
             <article class="pkg-card reveal">
-              <h3>Local Visibility</h3>
+              <h3 data-i18n="pkg.vis.title">Local Visibility</h3>
               <p class="pkg-price" data-price="visibility">from R1,500 <span>/ month</span></p>
               <ul>
-                <li>Google listing posts / replies help</li>
-                <li>Light local search tweaks</li>
-                <li>Short monthly note</li>
+                <li data-i18n="pkg.vis.1">Google listing posts / replies help</li>
+                <li data-i18n="pkg.vis.2">Light local search tweaks</li>
+                <li data-i18n="pkg.vis.3">Short monthly note</li>
               </ul>
-              <a class="btn btn-light" data-cta="whatsapp" href="#contact">Get a quote</a>
+              <a class="btn btn-light" data-cta="whatsapp" href="#contact" data-i18n="packages.quote">Get a quote</a>
             </article>
             <article class="pkg-card reveal">
-              <h3>Social Light</h3>
+              <h3 data-i18n="pkg.social.title">Social Light</h3>
               <p class="pkg-price" data-price="social">from R3,500 <span>/ month</span></p>
               <ul>
-                <li>8–12 posts on 1–2 platforms</li>
-                <li>Basic reply help</li>
+                <li data-i18n="pkg.social.1">8–12 posts on 1–2 platforms</li>
+                <li data-i18n="pkg.social.2">Basic reply help</li>
               </ul>
-              <a class="btn btn-light" data-cta="whatsapp" href="#contact">Get a quote</a>
+              <a class="btn btn-light" data-cta="whatsapp" href="#contact" data-i18n="packages.quote">Get a quote</a>
             </article>
             <article class="pkg-card reveal">
-              <h3>Ads Assist</h3>
+              <h3 data-i18n="pkg.ads.title">Ads Assist</h3>
               <p class="pkg-price" data-price="ads">from R2,500 <span>/ month + ad spend</span></p>
               <ul>
-                <li>Set up &amp; gently manage Google or Meta ads</li>
-                <li>Ad budget paid by you to Google/Meta</li>
+                <li data-i18n="pkg.ads.1">Set up &amp; gently manage Google or Meta ads</li>
+                <li data-i18n="pkg.ads.2">Ad budget paid by you to Google/Meta</li>
               </ul>
-              <a class="btn btn-light" data-cta="whatsapp" href="#contact">Get a quote</a>
+              <a class="btn btn-light" data-cta="whatsapp" href="#contact" data-i18n="packages.quote">Get a quote</a>
             </article>
             <article class="pkg-card reveal">
-              <h3>AI / Automation Care</h3>
+              <h3 data-i18n="pkg.aiCare.title">AI / Automation Care</h3>
               <p class="pkg-price" data-price="aiCare">from R1,200 <span>/ month</span></p>
               <ul>
-                <li>Watch workflows &amp; small changes</li>
-                <li>Monthly health check</li>
-                <li>One improvement idea</li>
+                <li data-i18n="pkg.aiCare.1">Watch workflows &amp; small changes</li>
+                <li data-i18n="pkg.aiCare.2">Monthly health check</li>
+                <li data-i18n="pkg.aiCare.3">One improvement idea</li>
               </ul>
-              <a class="btn btn-light" data-cta="whatsapp" href="#contact">Get a quote</a>
+              <a class="btn btn-light" data-cta="whatsapp" href="#contact" data-i18n="packages.quote">Get a quote</a>
             </article>
             <article class="pkg-card reveal">
-              <h3>Bundle what you need</h3>
-              <p class="pkg-price">Get a quote</p>
+              <h3 data-i18n="pkg.bundle.title">Bundle what you need</h3>
+              <p class="pkg-price" data-i18n="packages.quote">Get a quote</p>
               <ul>
-                <li>Month-to-month, 30 days’ notice</li>
-                <li>Billed in advance</li>
-                <li>Think of us as on-call for the basics</li>
+                <li data-i18n="pkg.bundle.1">Month-to-month, 30 days’ notice</li>
+                <li data-i18n="pkg.bundle.2">Billed in advance</li>
+                <li data-i18n="pkg.bundle.3">Think of us as on-call for the basics</li>
               </ul>
-              <a class="btn btn-light" data-cta="book" href="#contact">Book a free 15-min call</a>
+              <a class="btn btn-light" data-cta="book" href="#contact" data-i18n="hero.book">Book a free 15-min call</a>
             </article>
           </div>
         </div>
 
-        <p class="pkg-note">Starting “from” prices only — we’ll confirm a written quote for your scope after a free chat. Hosting, ad spend and WhatsApp message fees are paid by the client.</p>
+        <p class="pkg-note" data-i18n="packages.note">Starting “from” prices only — we’ll confirm a written quote for your scope after a free chat. Hosting, ad spend and WhatsApp message fees are paid by the client.</p>
       </div>
     </section>
 
     <!-- HOW IT WORKS -->
     <section class="section" id="how" aria-labelledby="how-title">
       <div class="container">
-        <p class="eyebrow">Simple process</p>
-        <h2 id="how-title" class="reveal">How it works</h2>
-        <p class="lead reveal">No jargon marathon. Four clear steps from “maybe” to done.</p>
+        <p class="eyebrow" data-i18n="how.eyebrow">Simple process</p>
+        <h2 id="how-title" class="reveal" data-i18n="how.title">How it works</h2>
+        <p class="lead reveal" data-i18n="how.lead">No jargon marathon. Four clear steps from “maybe” to done.</p>
         <div class="steps">
           <article class="step reveal">
-            <h3>Free 15-min call</h3>
-            <p>Tell us what’s broken or missing. We listen for the real bottleneck — Maps, site, WhatsApp or a messy process.</p>
+            <h3 data-i18n="how.1.title">Free 15-min call</h3>
+            <p data-i18n="how.1.desc">Tell us what’s broken or missing. We listen for the real bottleneck — Maps, site, WhatsApp or a messy process.</p>
           </article>
           <article class="step reveal">
-            <h3>Clear proposal</h3>
-            <p>Same-day (or next) one–two pager: package, price, timeline, what’s in and out. 50% deposit to start.</p>
+            <h3 data-i18n="how.2.title">Clear proposal</h3>
+            <p data-i18n="how.2.desc">Same-day (or next) one–two pager: package, price, timeline, what’s in and out. 50% deposit to start.</p>
           </article>
           <article class="step reveal">
-            <h3>We build &amp; set up</h3>
-            <p>You stay owner of listings and logins. We keep you in the loop with plain-language updates.</p>
+            <h3 data-i18n="how.3.title">We build &amp; set up</h3>
+            <p data-i18n="how.3.desc">You stay owner of listings and logins. We keep you in the loop with plain-language updates.</p>
           </article>
           <article class="step reveal">
-            <h3>Handover + care</h3>
-            <p>Short teach-back. Then optional monthly care so small fixes don’t pile up again.</p>
+            <h3 data-i18n="how.4.title">Handover + care</h3>
+            <p data-i18n="how.4.desc">Short teach-back. Then optional monthly care so small fixes don’t pile up again.</p>
           </article>
         </div>
       </div>
@@ -402,35 +419,35 @@
     <!-- WHY -->
     <section class="section why" id="why" aria-labelledby="why-title">
       <div class="container">
-        <p class="eyebrow">Why AllSorted</p>
-        <h2 id="why-title" class="reveal">Practical, clear, one team</h2>
+        <p class="eyebrow" data-i18n="why.eyebrow">Why AllSorted</p>
+        <h2 id="why-title" class="reveal" data-i18n="why.title">Practical, clear, one team</h2>
         <div class="why-grid">
           <article class="why-card reveal">
             <div class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
             <div>
-              <h3>Works across time zones</h3>
-              <p>Remote-first by design. We schedule around your day and keep communication clear on WhatsApp, email or video.</p>
+              <h3 data-i18n="why.1.title">Works across time zones</h3>
+              <p data-i18n="why.1.desc">Remote-first by design. We schedule around your day and keep communication clear on WhatsApp, email or video.</p>
             </div>
           </article>
           <article class="why-card reveal">
             <div class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></div>
             <div>
-              <h3>One partner for everything tech</h3>
-              <p>Website, Google, WhatsApp, light AI — not three agencies and a spreadsheet of logins.</p>
+              <h3 data-i18n="why.2.title">One partner for everything tech</h3>
+              <p data-i18n="why.2.desc">Website, Google, WhatsApp, light AI — not three agencies and a spreadsheet of logins.</p>
             </div>
           </article>
           <article class="why-card reveal">
             <div class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
             <div>
-              <h3>Plain language</h3>
-              <p>We explain what we’re doing and why. No ranking guarantees, no buzzword fog.</p>
+              <h3 data-i18n="why.3.title">Plain language</h3>
+              <p data-i18n="why.3.desc">We explain what we’re doing and why. No ranking guarantees, no buzzword fog.</p>
             </div>
           </article>
           <article class="why-card reveal">
             <div class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
             <div>
-              <h3>Fast, fixed-scope starts</h3>
-              <p>Maps Fix and Starter are designed to ship quickly. Bigger work stays written and bounded.</p>
+              <h3 data-i18n="why.4.title">Fast, fixed-scope starts</h3>
+              <p data-i18n="why.4.desc">Maps Fix and Starter are designed to ship quickly. Bigger work stays written and bounded.</p>
             </div>
           </article>
         </div>
@@ -440,25 +457,25 @@
     <!-- WORKING WITH US -->
     <section class="section case" id="working" aria-labelledby="working-title">
       <div class="container">
-        <p class="eyebrow">How we work</p>
-        <h2 id="working-title" class="reveal">What working with us looks like</h2>
-        <p class="lead reveal" style="max-width:40rem">Clear scope, practical delivery, and systems you can keep running — without a tech department.</p>
+        <p class="eyebrow" data-i18n="working.eyebrow">How we work</p>
+        <h2 id="working-title" class="reveal" data-i18n="working.title">What working with us looks like</h2>
+        <p class="lead reveal" style="max-width:40rem" data-i18n="working.lead">Clear scope, practical delivery, and systems you can keep running — without a tech department.</p>
         <div class="working-grid reveal">
           <article class="working-card">
-            <h3>1. Short discovery</h3>
-            <p>A free 15-minute chat to understand what you sell, where customers find you, and which tech tasks waste time each week.</p>
+            <h3 data-i18n="working.1.title">1. Short discovery</h3>
+            <p data-i18n="working.1.desc">A free 15-minute chat to understand what you sell, where customers find you, and which tech tasks waste time each week.</p>
           </article>
           <article class="working-card">
-            <h3>2. Written scope &amp; quote</h3>
-            <p>You get a clear package, timeline, and price before anything starts. 50% deposit; no surprise extras without a new mini-quote.</p>
+            <h3 data-i18n="working.2.title">2. Written scope &amp; quote</h3>
+            <p data-i18n="working.2.desc">You get a clear package, timeline, and price before anything starts. 50% deposit; no surprise extras without a new mini-quote.</p>
           </article>
           <article class="working-card">
-            <h3>3. Build &amp; hand over</h3>
-            <p>We set up the website, Google listing, WhatsApp or automations you asked for — then walk you through how to use them.</p>
+            <h3 data-i18n="working.3.title">3. Build &amp; hand over</h3>
+            <p data-i18n="working.3.desc">We set up the website, Google listing, WhatsApp or automations you asked for — then walk you through how to use them.</p>
           </article>
           <article class="working-card">
-            <h3>4. Optional ongoing care</h3>
-            <p>Stay on a monthly plan for updates, small fixes and light support, or call us when something new needs sorting.</p>
+            <h3 data-i18n="working.4.title">4. Optional ongoing care</h3>
+            <p data-i18n="working.4.desc">Stay on a monthly plan for updates, small fixes and light support, or call us when something new needs sorting.</p>
           </article>
         </div>
       </div>
@@ -467,32 +484,32 @@
     <!-- FAQ -->
     <section class="section" id="faq" aria-labelledby="faq-title">
       <div class="container center">
-        <p class="eyebrow">FAQ</p>
-        <h2 id="faq-title" class="reveal">Questions, answered plainly</h2>
+        <p class="eyebrow" data-i18n="faq.eyebrow">FAQ</p>
+        <h2 id="faq-title" class="reveal" data-i18n="faq.title">Questions, answered plainly</h2>
         <div class="faq-list">
           <div class="faq-item reveal">
-            <button class="faq-q" type="button" aria-expanded="false">Where do you work?</button>
-            <div class="faq-a">Worldwide, remote-first. We help small businesses anywhere with a good internet connection. English is primary; we also work in Русский and Español.</div>
+            <button class="faq-q" type="button" aria-expanded="false" data-i18n="faq.1.q">Where do you work?</button>
+            <div class="faq-a" data-i18n="faq.1.a">Worldwide, remote-first. We help small businesses anywhere with a good internet connection.</div>
           </div>
           <div class="faq-item reveal">
-            <button class="faq-q" type="button" aria-expanded="false">What’s the fastest way to start?</button>
-            <div class="faq-a">A Google Maps Fix. It’s a fixed, foot-in-the-door offer: clean up or set up your Google Business Profile so customers can find you. Many clients then add a Starter site or monthly care.</div>
+            <button class="faq-q" type="button" aria-expanded="false" data-i18n="faq.2.q">What’s the fastest way to start?</button>
+            <div class="faq-a" data-i18n="faq.2.a">A Google Maps Fix. It’s a fixed, foot-in-the-door offer: clean up or set up your Google Business Profile so customers can find you. Many clients then add a Starter site or monthly care.</div>
           </div>
           <div class="faq-item reveal">
-            <button class="faq-q" type="button" aria-expanded="false">Will you make us #1 on Google?</button>
-            <div class="faq-a">Nobody honest can guarantee rankings. We guarantee correct setup, clear contact buttons, consistent details, and a simple process you can keep up.</div>
+            <button class="faq-q" type="button" aria-expanded="false" data-i18n="faq.3.q">Will you make us #1 on Google?</button>
+            <div class="faq-a" data-i18n="faq.3.a">Nobody honest can guarantee rankings. We guarantee correct setup, clear contact buttons, consistent details, and a simple process you can keep up.</div>
           </div>
           <div class="faq-item reveal">
-            <button class="faq-q" type="button" aria-expanded="false">How do payments work?</button>
-            <div class="faq-a">50% deposit before we start; final 50% before go-live or handover. Monthly care plans are billed in advance. Hosting, ads and WhatsApp message fees are paid by you to those providers.</div>
+            <button class="faq-q" type="button" aria-expanded="false" data-i18n="faq.4.q">How do payments work?</button>
+            <div class="faq-a" data-i18n="faq.4.a">50% deposit before we start; final 50% before go-live or handover. Monthly care plans are billed in advance. Hosting, ads and WhatsApp message fees are paid by you to those providers.</div>
           </div>
           <div class="faq-item reveal">
-            <button class="faq-q" type="button" aria-expanded="false">Do you use freelancers?</button>
-            <div class="faq-a">Work is delivered in-house by Yuli / AllSorted. That keeps communication short and quality consistent.</div>
+            <button class="faq-q" type="button" aria-expanded="false" data-i18n="faq.5.q">Do you use freelancers?</button>
+            <div class="faq-a" data-i18n="faq.5.a">Work is delivered in-house by Yuli / AllSorted. That keeps communication short and quality consistent.</div>
           </div>
           <div class="faq-item reveal">
-            <button class="faq-q" type="button" aria-expanded="false">Can we talk in Russian or Spanish?</button>
-            <div class="faq-a">Yes. English is primary; we also work in Русский and Español.</div>
+            <button class="faq-q" type="button" aria-expanded="false" data-i18n="faq.6.q">Can we talk in Russian or Spanish?</button>
+            <div class="faq-a" data-i18n="faq.6.a">Yes. Use the language switcher at the top of the page — we work in English, Русский and Español.</div>
           </div>
         </div>
       </div>
@@ -501,23 +518,22 @@
     <!-- CONTACT -->
     <section class="section contact" id="contact" aria-labelledby="contact-title">
       <div class="container">
-        <p class="eyebrow">Let’s talk</p>
-        <h2 id="contact-title" class="reveal">Send a note — or chat on WhatsApp</h2>
-        <p class="lead reveal">Tell us what you need sorted. We’ll reply personally. Prefer chat? Use the WhatsApp button — no number shown on the page.</p>
+        <p class="eyebrow" data-i18n="contact.eyebrow">Let’s talk</p>
+        <h2 id="contact-title" class="reveal" data-i18n="contact.title">Send a note — or chat on WhatsApp</h2>
+        <p class="lead reveal" data-i18n="contact.lead">Tell us what you need sorted. We’ll reply personally. Prefer chat? Use the WhatsApp button — no number shown on the page.</p>
         <div class="contact-grid">
           <aside class="contact-panel reveal">
             <h3 style="font-size:1.35rem">AllSorted HQ</h3>
-            <p>Remote-first · working with clients worldwide</p>
-            <p style="margin-top:1.25rem;color:rgba(255,255,255,0.75)">Fastest reply is usually WhatsApp. Or fill in the form — we read every message.</p>
+            <p data-i18n="contact.panel.sub">Remote-first · working with clients worldwide</p>
+            <p style="margin-top:1.25rem;color:rgba(255,255,255,0.75)" data-i18n="contact.panel.note">Fastest reply is usually WhatsApp. Or fill in the form — we read every message.</p>
             <div class="btn-row" style="margin-top:1.5rem">
-              <a class="btn btn-primary" data-cta="whatsapp" href="#contact">Chat on WhatsApp</a>
-              <a class="btn btn-light" data-cta="book" href="#contact">Book a free 15-min call</a>
+              <a class="btn btn-primary" data-cta="whatsapp" href="#contact" data-i18n="nav.whatsapp">Chat on WhatsApp</a>
+              <a class="btn btn-light" data-cta="book" href="#contact" data-i18n="hero.book">Book a free 15-min call</a>
             </div>
-            <p class="lang-note" style="margin-top:1.25rem;background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);color:#fff">We also work in Русский and Español</p>
           </aside>
           <div class="contact-form-wrap reveal">
-            <h3>Contact form</h3>
-            <p class="muted" style="margin-top:0;margin-bottom:1.25rem">We’ll get back to you by email or WhatsApp. No spam.</p>
+            <h3 data-i18n="contact.form.title">Contact form</h3>
+            <p class="muted" style="margin-top:0;margin-bottom:1.25rem" data-i18n="contact.form.intro">We’ll get back to you by email or WhatsApp. No spam.</p>
             <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
               <!-- access_key injected from CONFIG.FORM_ACCESS_KEY in js/main.js — do not put an email here -->
               <input type="hidden" name="access_key" id="form-access-key" value="" />
@@ -526,43 +542,43 @@
               <!-- Honeypot -->
               <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
               <div class="form-row">
-                <label for="name">Name</label>
+                <label for="name" data-i18n="contact.form.name">Name</label>
                 <input id="name" name="name" type="text" autocomplete="name" required />
               </div>
               <div class="form-row">
-                <label for="business">Business name</label>
+                <label for="business" data-i18n="contact.form.business">Business name</label>
                 <input id="business" name="business" type="text" autocomplete="organization" required />
               </div>
               <div class="form-row">
-                <label for="email">Email</label>
+                <label for="email" data-i18n="contact.form.email">Email</label>
                 <input id="email" name="email" type="email" autocomplete="email" required />
               </div>
               <div class="form-row">
-                <label for="whatsapp">WhatsApp <span class="optional">(optional)</span></label>
-                <input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" placeholder="Include country code if you can" />
+                <label for="whatsapp"><span data-i18n="contact.form.whatsapp">WhatsApp</span> <span class="optional" data-i18n="contact.form.optional">(optional)</span></label>
+                <input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" data-i18n-placeholder="contact.form.whatsappPh" placeholder="Include country code if you can" />
               </div>
               <div class="form-row">
-                <label for="service">Service interested in</label>
+                <label for="service" data-i18n="contact.form.service">Service interested in</label>
                 <select id="service" name="service" required>
-                  <option value="" disabled selected>Choose one…</option>
-                  <option>Google Maps Fix</option>
-                  <option>Website creation</option>
-                  <option>Website care</option>
-                  <option>Google marketing</option>
-                  <option>Social media</option>
-                  <option>WhatsApp Business</option>
-                  <option>AI / automations</option>
-                  <option>General tech support</option>
-                  <option>Not sure — advise me</option>
+                  <option value="" disabled selected data-i18n="contact.form.choose">Choose one…</option>
+                  <option data-i18n="contact.form.opt.maps">Google Maps Fix</option>
+                  <option data-i18n="contact.form.opt.web">Website creation</option>
+                  <option data-i18n="contact.form.opt.care">Website care</option>
+                  <option data-i18n="contact.form.opt.gmarketing">Google marketing</option>
+                  <option data-i18n="contact.form.opt.social">Social media</option>
+                  <option data-i18n="contact.form.opt.wa">WhatsApp Business</option>
+                  <option data-i18n="contact.form.opt.ai">AI / automations</option>
+                  <option data-i18n="contact.form.opt.tech">General tech support</option>
+                  <option data-i18n="contact.form.opt.other">Not sure — advise me</option>
                 </select>
               </div>
               <div class="form-row">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" required placeholder="What do you need sorted?"></textarea>
+                <label for="message" data-i18n="contact.form.message">Message</label>
+                <textarea id="message" name="message" rows="5" required data-i18n-placeholder="contact.form.messagePh" placeholder="What do you need sorted?"></textarea>
               </div>
-              <button class="btn btn-primary" type="submit" id="form-submit-btn">Send message</button>
+              <button class="btn btn-primary" type="submit" id="form-submit-btn" data-i18n="contact.form.submit">Send message</button>
               <p id="form-status" class="form-status" role="status" aria-live="polite" hidden></p>
-              <p class="form-hint">Prefer chat? <a data-cta="whatsapp" href="#contact">Chat on WhatsApp</a> instead.</p>
+              <p class="form-hint" data-i18n-html="contact.form.hint">Prefer chat? <a data-cta="whatsapp" href="#contact">Chat on WhatsApp</a> instead.</p>
             </form>
           </div>
         </div>
@@ -588,23 +604,23 @@
               <text x="62" y="50" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" letter-spacing="2.5" fill="#14B8A6">HQ</text>
             </svg>
           </a>
-          <p>Tech, business &amp; AI, all sorted. A remote-first partner helping small businesses worldwide get found, get organised, and use simple tech with less stress.</p>
+          <p data-i18n="footer.blurb">Tech, business &amp; AI, all sorted. A remote-first partner helping small businesses worldwide get found, get organised, and use simple tech with less stress.</p>
         </div>
-        <nav class="footer-links" aria-label="Footer">
-          <a href="#services">Services</a>
-          <a href="#packages">Packages</a>
-          <a href="#working">How we work</a>
-          <a href="#contact">Contact</a>
-          <a href="privacy.html">Privacy</a>
+        <nav class="footer-links" data-i18n-aria="footer.nav" aria-label="Footer">
+          <a href="#services" data-i18n="footer.services">Services</a>
+          <a href="#packages" data-i18n="footer.packages">Packages</a>
+          <a href="#working" data-i18n="footer.working">How we work</a>
+          <a href="#contact" data-i18n="footer.contact">Contact</a>
+          <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
         </nav>
       </div>
       <div class="footer-bottom">
         <span>© <span id="year">2026</span> AllSorted HQ</span>
-        <span>We also work in Русский and Español</span>
       </div>
     </div>
   </footer>
 
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
