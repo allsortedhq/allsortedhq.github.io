@@ -498,28 +498,6 @@ h3 {
 .packages .lead {
   color: rgba(255, 255, 255, 0.72);
 }
-.launch-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  margin: 0.85rem 0 0.65rem;
-  padding: 0.4rem 0.9rem;
-  border-radius: 999px;
-  background: rgba(20, 184, 166, 0.16);
-  border: 1px solid rgba(20, 184, 166, 0.45);
-  color: #5eead4;
-  font-size: 0.86rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-}
-.launch-badge::before {
-  content: "";
-  width: 0.45rem;
-  height: 0.45rem;
-  border-radius: 50%;
-  background: var(--teal);
-  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.25);
-}
 .pkg-tabs {
   display: inline-flex;
   background: rgba(255, 255, 255, 0.08);
@@ -1081,4 +1059,33 @@ h3 {
 #form-submit-btn:disabled {
   opacity: 0.65;
   cursor: wait;
+}
+
+
+.working-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.working-card {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.35rem 1.25rem;
+}
+.working-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+}
+.working-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+@media (max-width: 960px) {
+  .working-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 720px) {
+  .working-grid { grid-template-columns: 1fr; }
 }

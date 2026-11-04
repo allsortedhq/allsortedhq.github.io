@@ -29,7 +29,7 @@ No email, phone or street address is displayed on the site.
 
 Also in `CONFIG`:
 
-- `packages` — ZAR base “from” prices (launch plan lows)
+- `packages` — ZAR base “from” prices
 - `tiers.A/B/C.multiplier` — currently **2.75 / 1.4 / 1.0**
 - `fxZarPerUnit` — approximate ZAR per 1 unit of each display currency (not live FX)
 - `currencies` — display currencies and which tier each maps to when switched manually

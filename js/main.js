@@ -16,7 +16,7 @@ const CONFIG = {
   LOCATION: "Worldwide · remote-first",
 
   // === REGIONAL PRICING ===
-  // Base prices = launch-plan ZAR "from" lows (AllSorted Business Launch Plan, Nov 2026)
+  // Base prices = ZAR "from" lows (AllSorted pricing, Nov 2026)
   baseCurrency: "ZAR",
   packages: {
     maps: { zar: 1200, period: "once" },
