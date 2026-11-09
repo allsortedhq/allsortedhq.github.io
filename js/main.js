@@ -410,6 +410,15 @@ const CONFIG = {
     const yearEl = document.getElementById("year");
     if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
+    // Prefill contact form service from CTA (e.g. travel band)
+    document.querySelectorAll("[data-prefill-service]").forEach((el) => {
+      el.addEventListener("click", () => {
+        const key = el.getAttribute("data-prefill-service");
+        const opt = document.querySelector('#service option[data-service="' + key + '"]');
+        if (opt) opt.selected = true;
+      });
+    });
+
     const toggle = document.querySelector(".nav-toggle");
     const nav = document.querySelector(".nav-links");
     if (toggle && nav) {
